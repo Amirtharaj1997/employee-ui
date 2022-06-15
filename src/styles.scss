@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "ngx-bootstrap/datepicker/bs-datepicker.css";
+
+
+form > * {
+  margin-bottom: 10px;
+  padding : 10px;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}

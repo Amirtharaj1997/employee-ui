@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item cursor-pointer" >
+        <a class="nav-link" [class.active]="!activeRouter.url.includes('holiday')" (click)="api.routeTo('leave-application')">Leave Application</a>
+      </li>
+      <li class="nav-item cursor-pointer"  [class.active]="activeRouter.url.includes('holiday')">
+        <a class="nav-link" [class.active]="!!activeRouter.url.includes('holiday')" (click)="api.routeTo('holiday')">Holiday</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <button class="btn btn-outline-primary my-2 my-sm-0" type="button" (click)="api.routeTo('holiday')">Back</button>
+  </div>
+</nav>
+<form [formGroup]="holidayForm" class="form">
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <label for="reason" >Reason </label>
+        <input type="text" class="form-control" placeholder="reason" id="reason" formControlName="reason">
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="holidayDate" > Holiday Date</label>
+        <input  bsDatepicker class="form-control" placeholder="holidayDate" id="holidayDate" formControlName="holidayDate">
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary my-2 my-sm-0" type="submit" *ngIf="!api.getHolidayCache()" (click)="submit()">Save</button>
+</form>

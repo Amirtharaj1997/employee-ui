@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse justify-content-end m-3 navbar-collapse" id="navbarSupportedContent">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="routeTo(null)">Add new Holiday</button>
+  </div>
+</nav>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">SI.NO</th>
+    <th scope="col">Reason</th>
+    <th scope="col">Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let holiday of holidays; let i= index" (click)="routeTo(holiday)">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{holiday?.reason}}</td>
+    <td>{{holiday?.holidayDate | date}}</td>
+  </tr>
+  </tbody>
+</table>
