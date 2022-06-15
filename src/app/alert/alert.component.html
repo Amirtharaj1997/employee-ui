@@ -1,1 +1,6 @@
-<p>alert works!</p>
+<bs-alert type="danger"
+       *ngIf="message"
+       >
+  <strong>Error !!</strong>
+  {{message}}
+</bs-alert>

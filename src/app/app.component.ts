@@ -9,6 +9,8 @@ import {ApiService} from "./api.service";
 })
 export class AppComponent {
   title = 'Leave Application';
+  message: any;
   constructor(public activeRouter: Router, public api: ApiService) {
+    this.api.alert$.subscribe(res => this.message = res);
   }
 }

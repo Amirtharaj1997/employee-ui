@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AlertConfig, AlertModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpClientModule,
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AlertModule
   ],
-  providers: [],
+  providers: [AlertConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

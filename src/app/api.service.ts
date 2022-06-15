@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment.prod';
 import {LeaveApplicationModel} from './leave-application/LeaveApplication.model';
 import {Router} from '@angular/router';
+import {Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class ApiService {
     holiday: null,
     leave: null,
   };
+  alert$: Subject<string> = new Subject<string>();
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -48,9 +50,18 @@ export class ApiService {
   }
 
   showAlert(invalidForm: string) {
-
+    this.alert$.next('Form Invalid');
   }
 
   errorHandle(e) {
+    if (e.status == 500) {
+      this.alert$.next('Internal Server Error');
+
+    } else if (e.status == 401) {
+      this.alert$.next('Bad request');
+    } else {
+      this.alert$.next('Some thing went wrong');
+    }
+    setTimeout( () => this.alert$.next(null), 3000);
   }
 }
